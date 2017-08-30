@@ -23,7 +23,7 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 //switch uses most specific route that matches, top down.
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
     <App />
   </Provider>
   , document.getElementById('root'));
